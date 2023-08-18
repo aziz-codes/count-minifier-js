@@ -1,11 +1,11 @@
-const countMinifier = (count) => {
-  let kth = count / 1000;
-  let tenKth = count / 10000;
-  let lacKth = count / 100000;
-  let millKth = count / 1000000;
-  let tenMlth = count / 10000000;
+function minifyNumber(num) {
+  if (num >= 1000000) {
+    return (num / 1000000).toFixed(1) + "M";
+  } else if (num >= 1000) {
+    return (num / 1000).toFixed(1) + "k";
+  } else {
+    return num.toString();
+  }
+}
 
-  if (count % 2 === 0) return kth + "k";
-  return kth.toString().slice(0, -4) + "k";
-};
-console.log(countMinifier(4000));
+console.log(minifyNumber(1100));
